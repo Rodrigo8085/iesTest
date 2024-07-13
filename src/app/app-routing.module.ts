@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CheckLogged } from './shared/guard/checkLogged.guard';
+import { CheckLogged } from './shared/guards/checkLogged.guard';
 
 const routes: Routes = [
   {

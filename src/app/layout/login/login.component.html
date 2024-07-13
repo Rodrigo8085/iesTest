@@ -1,1 +1,26 @@
-<p>login works!</p>
+<section class="custom-body">
+    <div class="card custom-blured col-12 col-md-8 col-lg-3 col-xl-3 text-center">
+        <div class="card-body">
+            <form class="form-signin">
+                <img class="" src="../../../assets/images/logo.jpg" alt="" width="72" height="auto">
+                <h1 class="h3 mb-3 font-weight-normal">{{ complete.user ? 'Te damos la bienvenida' : 'Por favor identificate' }}</h1>
+                <mat-form-field *ngIf="!complete.user" class="example-full-width  pb-3" appearance="fill">
+                    <mat-label>Usuario</mat-label>
+                    <input type="text" matInput [formControl]="getFormControl('username')" placeholder="Usuario">
+                    <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+                      Usuario <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="complete.user" class="example-full-width  pb-3" appearance="fill">
+                    <mat-label>Contaseña</mat-label>
+                    <input type="text" matInput [formControl]="getFormControl('password')" placeholder="Usuario">
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                        Contaseña <strong>requerida</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button class="btn btn-primary btn-block" [disabled]="getFormControl('username').value !== '' || getFormControl('password').value !== ''" (click)="complete.user ? validarDatos() : complete.user = true">{{ complete.user ? 'Iniciar session' : 'Siguiente' }}</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
+            </form>
+        </div>
+    </div>
+</section>
