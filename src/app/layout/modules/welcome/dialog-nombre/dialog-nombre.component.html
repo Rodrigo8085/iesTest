@@ -1,0 +1,14 @@
+<h1 mat-dialog-title class="text-center">Crear-Editar Nombre</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" class="custom-input">
+        <mat-label>Introduce tu nombre</mat-label>
+        <input matInput [formControl]="controlName">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions class="custom-buttons">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button class="btn btn-danger" mat-button mat-dialog-close>Cancelar</button>
+        <button class="btn btn-success" [disabled]="controlName.invalid" mat-button [mat-dialog-close]="controlName.value"
+            cdkFocusInitial>Guardar</button>
+    </div>
+</div>

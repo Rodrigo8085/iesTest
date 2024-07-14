@@ -10,3 +10,48 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+h1 {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xxx-large;
+    text-shadow: 2px 2px 5px rgb(43, 40, 40);
+    letter-spacing: 5px;
+}
+
+h3 {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+    text-shadow: 2px 2px 5px rgb(43, 40, 40);
+    letter-spacing: 5px;
+}
+
+h5 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+    text-shadow: 2px 2px 5px rgb(43, 40, 40);
+    letter-spacing: 2px;
+}
+
+.boton-contacto {
+    border-style: double;
+    background-color: unset;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-color: white;
+    font-weight: bold;
+  }
+  
+  .boton-contacto:hover {
+    background-color: #1f2423; /* Color de fondo azul oscuro al pasar el mouse */
+  }
+  

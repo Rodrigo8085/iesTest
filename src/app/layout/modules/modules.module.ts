@@ -8,6 +8,10 @@ import { CalculateDateComponent } from './calculate-date/calculate-date.componen
 import { FormComponent } from './form/form.component';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { ModulesComponent } from './modules.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogNombreComponent } from './welcome/dialog-nombre/dialog-nombre.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,12 +20,18 @@ import { ModulesComponent } from './modules.component';
     ConversionsComponent,
     CalculateDateComponent,
     FormComponent,
-    ModulesComponent
+    ModulesComponent,
+    DialogNombreComponent
   ],
+  exports: [ DialogNombreComponent],
   imports: [
     CommonModule,
     ModulesRoutingModule,
-    PipesModule
+    PipesModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ModulesModule { }

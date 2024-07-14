@@ -1,7 +1,18 @@
-<section class="container-fluid">
+<section class="container-fluid px-0">
     <div class="custom-container">
         <img src="../../../../assets/images/welcome-landing.webp" alt="CDMX_Photografy" style="width:100%;">
-        <div class="custom-centered">{{ 'Bienvenido a mi portal.' | appCambioLetras }}</div>
+        <div class="custom-centered">
+            <h1>
+                {{ 'Bienvenido a mi portal.' }}
+            </h1>
+            <h3>
+                Rodrigo Santiago González
+            </h3>
+            <ng-container *ngIf="nombreIngresado !== ''">
+                <h5>El nombre ingresado es:</h5>
+                <h5>{{ nombreIngresado | cambioLetras }}</h5>
+            </ng-container>
+            <button class="boton-contacto" (click)="escribirNombre()">{{ nombreIngresado === '' ? 'Escribe tu nombre.' : 'Actualiza tu nombre.' }}</button>
+        </div>
     </div>
-    <!-- <img src="../../../../assets/images/welcome-landing.webp" class="img-fluid" alt="CDMX_Photografy"> -->
 </section>
