@@ -50,10 +50,19 @@
 
 .example-full-width {
     width: 100%;
-  }
+}
 
-  .btn-primary {
+.btn-primary {
     background-color: #004E75;
     border-color: #004E75;
-  }
+}
 
+@media (max-width: 900px) {
+    .card {
+        height: 100vh;
+    }
+
+    .card-body {
+        align-content: center;
+    }
+}

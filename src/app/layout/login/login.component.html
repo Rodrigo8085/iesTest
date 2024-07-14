@@ -18,7 +18,13 @@
                         Contaseña <strong>requerida</strong>
                     </mat-error>
                 </mat-form-field>
-                <button class="btn btn-primary btn-block" [disabled]="getFormControl('username').value !== '' || getFormControl('password').value !== ''" (click)="complete.user ? validarDatos() : complete.user = true">{{ complete.user ? 'Iniciar session' : 'Siguiente' }}</button>
+                <button class="btn btn-primary btn-block" [disabled]="!complete.user ? getFormControl('username').value === '' : getFormControl('password').value === ''" (click)="complete.user ? validarDatos() : complete.user = true">{{ complete.user ? 'Iniciar session' : 'Siguiente' }}</button>
+                <div *ngIf="alert.show" class="my-3 alert-dismissible fade show alert" [ngClass]="alert.class !== '' ? alert.class : 'alert-dark'" role="alert">
+                    <span>{{ alert.mensagge }}</span>
+                    <button type="button" class="close" aria-label="Close" (click)="resetAlert(); resetComplete()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
             </form>
         </div>
