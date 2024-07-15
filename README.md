@@ -101,10 +101,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+![image](https://github.com/user-attachments/assets/bd5e4974-c174-431d-a3de-02b4ad9ab981)
+
+![image](https://github.com/user-attachments/assets/848ce8d8-b4b6-498a-93cc-72f0edb987e6)
+
+![image](https://github.com/user-attachments/assets/1353cbcf-5562-4461-a0b4-334b78e8af4a)
+
+![image](https://github.com/user-attachments/assets/a3feae75-63fb-44a2-9191-9930af619358)
+
+![image](https://github.com/user-attachments/assets/42220bf0-080f-4e2f-9de4-1744f05fe858)
 
 
 Implementación del tiempo para la realizacion de este proyecto:
+
 -3hrs el 12 de julio de 2024
+
 -3hrs + 3hrs el 13 de julio de 2024
+
 -4hrs + 2hrs + 1.9hrs + 3.8Hrs el 14 de julio de 2024
+
 -5.5hrs el 15 de julio del 2024
