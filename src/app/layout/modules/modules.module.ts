@@ -11,7 +11,11 @@ import { ModulesComponent } from './modules.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogNombreComponent } from './welcome/dialog-nombre/dialog-nombre.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatCardModule } from "@angular/material/card";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from "@angular/material/select";
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatSelectModule
   ]
 })
 export class ModulesModule { }

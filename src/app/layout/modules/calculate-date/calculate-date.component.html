@@ -1,1 +1,32 @@
-<p>calculate-date works!</p>
+<section class="row pt-lg-3 pt-xl-3">
+    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-end">
+        <mat-card class="col-9 demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+        </mat-card>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-start">
+        <div class="card col-9">
+            <div class="card-body">
+                <ng-container *ngIf="selectedDate; else selectedDateTemplate">
+                    <p>Fecha seleccionada: {{selectedDate | date : "dd MMM yyyy" }}</p>
+                    <mat-form-field appearance="fill" class="form-full">
+                        <mat-label>Unidad</mat-label>
+                        <mat-select [formControl]="getControl('unidad')">
+                            <mat-option *ngFor="let unidad of opcionesUnidad" [value]="unidad">
+                                {{ unidad }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form-full">
+                        <mat-label>Cantidad</mat-label>
+                        <input matInput type="number" [formControl]="getControl('cantidad')">
+                    </mat-form-field>
+                    <p *ngIf="calculatedDate">El resultado fue: {{ calculatedDate | date : "dd MMM yyyy" }}</p>
+                </ng-container>
+                <ng-template #selectedDateTemplate>
+                    <h3>Por favor indique una fecha.</h3>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
