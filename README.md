@@ -106,4 +106,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Implementación del tiempo para la realizacion de este proyecto:
 -3hrs el 12 de julio de 2024
 -3hrs + 3hrs el 13 de julio de 2024
--4hrs + 2hrs + 1.45grs el 14 de julio de 2024
+-4hrs + 2hrs + 1.9hrs + 3.8Hrs el 14 de julio de 2024
