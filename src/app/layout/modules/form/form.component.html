@@ -1,1 +1,51 @@
-<p>form works!</p>
+<section class="row pt-lg-3 pt-xl-3 d-flex justify-content-center">
+    <div class="card col-12 col-lg-4 col-xl-4">
+        <div class="card-body">
+            <h2 class="text-center">Datos Personales</h2>
+            <div *ngIf="alert.show" class="alert" [ngClass]="alert.class !== '' ? alert.class : 'alert-dark'"  role="alert">
+                <h4 class="alert-heading text-center">{{ alert.header}}</h4>
+                <p *ngIf="alert.mensagge !== ''">{{ alert.mensagge}}</p>
+              </div>
+            <ng-container *ngFor="let control of configControls">
+                <ng-container *ngIf="control.view">
+                    <ng-container [ngSwitch]="control.type">
+                        <ng-container *ngSwitchCase="'slide-toggle'">
+                            <p>
+                                {{ control.label }}
+                                <mat-slide-toggle class="form-full" [formControl]="getFormControl(control.bind)"></mat-slide-toggle>
+                            </p>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'checkbox'">
+                            <p class="form-full" *ngFor="let check of catalogoLibros; index as i"><mat-checkbox [formControl]="getLibrosForm(i)">{{ check }}</mat-checkbox></p>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'select'">
+                            <mat-form-field appearance="fill" class="form-full">
+                                <mat-label>{{ control.label }}</mat-label>
+                                <mat-select [formControl]="getFormControl(control.bind)">
+                                    <mat-option *ngFor="let unidad of catalogoEstadoCivil" [value]="unidad">
+                                        {{ unidad }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                            <mat-form-field appearance="fill" class="form-full p-b-2">
+                                <mat-label>{{ control.label }}</mat-label>
+                                <input matInput [formControl]="getFormControl(control.bind)">
+                                <mat-error *ngIf="getFormControl(control.bind).hasError('required')">
+                                    El campo es requerido
+                                </mat-error>
+                                <mat-error *ngIf="getFormControl(control.bind).hasError('pattern')">
+                                    El campo tiene un espacio al final
+                                </mat-error>
+                            </mat-form-field>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary" [disabled]="formControls.invalid" (click)="enviarValidarFormulario()">Enviar</button>
+            </div>
+        </div>
+    </div>
+</section>

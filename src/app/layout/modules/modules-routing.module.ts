@@ -5,6 +5,7 @@ import { CalculateDateComponent } from './calculate-date/calculate-date.componen
 import { ConversionsComponent } from './conversions/conversions.component';
 import { FormComponent } from './form/form.component';
 import { ModulesComponent } from './modules.component';
+import { EstadoCivilCatalogoResolverService } from 'src/app/shared/services/estado-civil-catalogo-resolver.service';
 
 const routes: Routes = [
   {
@@ -26,7 +27,10 @@ const routes: Routes = [
       },
       {
         path: 'form',
-        component: FormComponent
+        component: FormComponent,
+        // resolve: {
+        //   estadoCivil: EstadoCivilCatalogoResolverService
+        // }
       },
     ]
   }

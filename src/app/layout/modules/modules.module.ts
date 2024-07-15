@@ -16,6 +16,8 @@ import { MatCardModule } from "@angular/material/card";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from "@angular/material/select";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { MatSelectModule } from "@angular/material/select";
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatCheckboxModule
   ]
 })
 export class ModulesModule { }

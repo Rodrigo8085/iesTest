@@ -1,5 +1,5 @@
 export interface IResponseLogin {
-    header: {
+    header?: {
         codigoOperacionBackend: string,
         codigoRespuesta: string,
         descripcionRespuesta: string,
@@ -11,5 +11,7 @@ export interface IResponseLogin {
             }
         ]
     },
-    resultado: any
+    resultado?: any,
+    exito?: boolean,
+    mensaje?: string;
 }

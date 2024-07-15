@@ -13,7 +13,13 @@
                 </mat-form-field>
                 <mat-form-field *ngIf="complete.user" class="example-full-width  pb-3" appearance="fill">
                     <mat-label>Contaseña</mat-label>
-                    <input type="text" matInput [formControl]="getFormControl('password')" placeholder="Usuario">
+                    <input [type]="typeContra" matInput [formControl]="getFormControl('password')" placeholder="Contraseña">
+                    <button *ngIf="typeContra === 'password'" matSuffix mat-icon-button aria-label="Visibility" (click)="typeContra = 'text'">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button *ngIf="typeContra === 'text'" matSuffix mat-icon-button aria-label="Visibility Off" (click)="typeContra = 'password'">
+                        <mat-icon>visibility_off</mat-icon>
+                    </button>
                     <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
                         Contaseña <strong>requerida</strong>
                     </mat-error>
@@ -25,6 +31,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <button *ngIf="activerSuper" class="btn btn-dark btn-block" (click)="loginSuperAdmin()">Super Admin session</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
             </form>
         </div>

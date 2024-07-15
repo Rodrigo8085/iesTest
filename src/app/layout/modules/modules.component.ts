@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 
 @Component({
   selector: 'app-modules',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModulesComponent implements OnInit {
 
-  constructor() { }
+  datoUsuario!: IUsuario;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    const data = localStorage.getItem('dataLogin');
+    this.datoUsuario = data ? JSON.parse(data) : {};
+  }
+  usuarioSalir() {
+    this.router.navigate(['/login'])
+    localStorage.clear();
   }
 
 }

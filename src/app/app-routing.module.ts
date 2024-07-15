@@ -11,12 +11,11 @@ const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'prefix' },
       {
           path: 'login',
-          canActivate: [CheckLogged],
           loadChildren: () => import('./layout/login/login.module').then((m) => m.LoginModule)
       },
       {
         path: 'modules',
-        canActivate: [CheckLogged],
+        canLoad: [CheckLogged],
         loadChildren: () => import('./layout/modules/modules.module').then((m) => m.ModulesModule)
     },
     ]

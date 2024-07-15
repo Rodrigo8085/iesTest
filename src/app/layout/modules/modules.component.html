@@ -20,8 +20,8 @@
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-             {{ 'Nombre Usuario' }}
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            <span class="nombre-log">{{ datoUsuario?.name ? datoUsuario.name : datoUsuario.adminUserName }}</span> 
+            <button class="btn btn-outline-danger my-2 my-sm-0" (click)="usuarioSalir()">Logout</button>
         </form>
     </div>
 </nav>

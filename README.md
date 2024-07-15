@@ -107,3 +107,4 @@ Implementación del tiempo para la realizacion de este proyecto:
 -3hrs el 12 de julio de 2024
 -3hrs + 3hrs el 13 de julio de 2024
 -4hrs + 2hrs + 1.9hrs + 3.8Hrs el 14 de julio de 2024
+-5.5hrs el 15 de julio del 2024
