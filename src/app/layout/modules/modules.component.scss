@@ -8,3 +8,9 @@
     padding: 0 1vw 0 0;
     color: white;
 }
+
+.custom-login {
+    @media (max-width: 900px) {
+        justify-content: space-between;
+    }
+}

@@ -1,10 +1,10 @@
 <section class="row pt-lg-3 pt-xl-3">
-    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-end">
+    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-center justify-content-lg-end justify-content-xl-end">
         <mat-card class="col-9 demo-inline-calendar-card">
             <mat-calendar [(selected)]="selectedDate"></mat-calendar>
         </mat-card>
     </div>
-    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-start">
+    <div class="col-12 col-lg-6 col-xl-6 d-flex justify-content-center justify-content-lg-start justify-content-xl-start">
         <div class="card col-9">
             <div class="card-body">
                 <ng-container *ngIf="selectedDate; else selectedDateTemplate">

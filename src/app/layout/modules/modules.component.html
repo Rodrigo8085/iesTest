@@ -19,7 +19,7 @@
                 <a class="nav-link" routerLink="/modules/form">Formulario <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
+        <form class="form-inline mt-2 mt-md-0 custom-login">
             <span class="nombre-log">{{ datoUsuario?.name ? datoUsuario.name : datoUsuario.adminUserName }}</span> 
             <button class="btn btn-outline-danger my-2 my-sm-0" (click)="usuarioSalir()">Logout</button>
         </form>

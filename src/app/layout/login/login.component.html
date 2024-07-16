@@ -3,7 +3,7 @@
         <div class="card-body">
             <form class="form-signin">
                 <img class="" src="../../../assets/images/logo.jpg" alt="" width="72" height="auto">
-                <h1 class="h3 mb-3 font-weight-normal">{{ complete.user ? 'Te damos la bienvenida' : 'Por favor identificate' }}</h1>
+                <h1 class="mb-3 font-weight-normal lead">{{ complete.user ? 'Te damos la bienvenida' : 'Por favor identificate' }}</h1>
                 <mat-form-field *ngIf="!complete.user" class="example-full-width  pb-3" appearance="fill">
                     <mat-label>Usuario</mat-label>
                     <input type="text" matInput [formControl]="getFormControl('username')" placeholder="Usuario">
