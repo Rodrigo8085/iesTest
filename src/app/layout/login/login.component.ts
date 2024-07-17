@@ -52,11 +52,11 @@ export class LoginComponent implements OnInit {
   }
 
   validarDatos() {
+    this.countActiveGlobal ++;
     this.loginForm.get('password')?.markAsPristine();
     this.loginService.validarData(this.loginForm.value)
     .subscribe({
       next: (response: IResponseLogin) => {
-        this.countActiveGlobal ++;
         if (response.exito === true) {
           localStorage.setItem('dataLogin', JSON.stringify(response));
           this.router.navigate(['/modules'])
@@ -64,9 +64,6 @@ export class LoginComponent implements OnInit {
           this.alert.show = true;
           this.alert.mensagge = response?.mensaje ? response?.mensaje : '';
           this.alert.class= 'alert-danger';
-          if (this.countActiveGlobal > 1) {
-            this.activerSuper = true;
-          }
         }
       },
       error: (error: HttpErrorResponse ) => {
@@ -85,9 +82,11 @@ export class LoginComponent implements OnInit {
           this.alert.mensagge = 'Error al procesar la solicitud reintentalo';
           this.alert.class= '';
         }
-
       }
     });
+    if (this.countActiveGlobal > 1) {
+      this.activerSuper = true;
+    }
   }
 
   loginSuperAdmin() {

@@ -4,7 +4,7 @@
             <h2 class="text-center">Datos Personales</h2>
             <div *ngIf="alert.show" class="alert" [ngClass]="alert.class !== '' ? alert.class : 'alert-dark'"  role="alert">
                 <h4 class="alert-heading text-center">{{ alert.header}}</h4>
-                <p *ngIf="alert.mensagge !== ''">{{ alert.mensagge}}</p>
+                <p *ngIf="alert.mensagge !== ''">{{ determinarTestoObject(alert.mensagge) ? (alert.mensagge | json ) : alert.mensagge }}</p>
               </div>
             <ng-container *ngFor="let control of configControls">
                 <ng-container *ngIf="control.view">

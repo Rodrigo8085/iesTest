@@ -172,19 +172,36 @@ export class FormComponent implements OnInit {
       } else {
         this.alert.show = true;
         this.alert.header = 'Formulario Valido';
-        this.alert.mensagge = '';
+        this.alert.mensagge = this.sanitizacionDatos(this.formControls.value);
         this.alert.class = 'alert-success';
       }
     } else {
       this.alert.show = true;
       this.alert.header = 'Formulario Valido';
-      this.alert.mensagge = '';
+      this.alert.mensagge = this.sanitizacionDatos(this.formControls.value);
       this.alert.class = 'alert-success';
     }
   }
 
+  sanitizacionDatos(values: any): any {
+    if (values.hasOwnProperty('librosLeidosUltimosTresMeses')) {
+      const newLibros: string[] = [];
+      values['librosLeidosUltimosTresMeses'].forEach((element: boolean, index: number) => {
+        if (element === true) {
+          newLibros.push(this.catalogoLibros[index])
+        }
+      });
+      values['librosLeidosUltimosTresMeses'] = newLibros;
+    }
+    return values;
+  }
+
   alMenosUnLibro(values: boolean[]): boolean {
     return values.every(t => t === false);
+  }
+
+  determinarTestoObject(value: string | object): boolean {
+    return typeof value === 'object';
   }
 
   resetAlert():void {
